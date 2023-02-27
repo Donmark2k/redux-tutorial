@@ -1,11 +1,4 @@
-import './App.css';
-
 function App() {
-  return (
-    <div className="App">
-     
-    </div>
-  );
+  return <h2>Redux Toolkit</h2>;
 }
-
 export default App;
