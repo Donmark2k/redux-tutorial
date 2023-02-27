@@ -1,4 +1,4 @@
-import { ChevronDown, ChevronUp } from '../icons';
+ import { ChevronDown, ChevronUp } from '../icons';
 import { removeItem, increase, decrease } from '../features/cart/cartSlice';
 import { useDispatch } from 'react-redux';
 
