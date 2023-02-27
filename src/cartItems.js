@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const cartItems = [
   {
     id: 'rec1JZlfCIBOPdcT2',
@@ -28,5 +30,13 @@ const cartItems = [
     amount: 1,
   },
 ];
+
+cartItems.propTypes = {
+  id: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  amount: PropTypes.string.isRequired,
+};
 
 export default cartItems;

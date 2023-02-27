@@ -1,17 +1,25 @@
+import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { ChevronDown, ChevronUp } from '../icons';
 import { removeItem, increase, decrease } from '../features/cart/cartSlice';
-import { useDispatch } from 'react-redux';
 
-const CartItem = ({ id, img, title, price, amount }) => {
+const CartItem = ({
+  id, img, title, price, amount,
+}) => {
   const dispatch = useDispatch();
+
   return (
-    <article className='cart-item'>
+    <article className="cart-item">
       <img src={img} alt={title} />
       <div>
         <h4>{title}</h4>
-        <h4 className='item-price'>${price}</h4>
+        <h4 className="item-price">
+          $
+          {price}
+        </h4>
         <button
-          className='remove-btn'
+          type="button"
+          className="remove-btn"
           onClick={() => {
             dispatch(removeItem(id));
           }}
@@ -21,16 +29,18 @@ const CartItem = ({ id, img, title, price, amount }) => {
       </div>
       <div>
         <button
-          className='amount-btn'
+          type="button"
+          className="amount-btn"
           onClick={() => {
             dispatch(increase({ id }));
           }}
         >
           <ChevronUp />
         </button>
-        <p className='amount'>{amount}</p>
+        <p className="amount">{amount}</p>
         <button
-          className='amount-btn'
+          type="button"
+          className="amount-btn"
           onClick={() => {
             if (amount === 1) {
               dispatch(removeItem(id));
@@ -44,5 +54,12 @@ const CartItem = ({ id, img, title, price, amount }) => {
       </div>
     </article>
   );
+};
+cartItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  amount: PropTypes.string.isRequired,
 };
 export default CartItem;
