@@ -12,7 +12,6 @@ const initialState = {
 };
 
 export const getCartItems = createAsyncThunk(
-    
   'cart/getCartItems',
   async (name, thunkAPI) => {
     try {
