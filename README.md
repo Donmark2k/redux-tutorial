@@ -726,5 +726,4 @@ const cartSlice = createSlice({
       });
   },
 });
-
 ```
